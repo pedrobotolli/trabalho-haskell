@@ -1,0 +1,23 @@
+module Main where
+
+main::IO()
+main = do
+    x <- getLine
+    let xs = read $ foo "("++x++")"
+    putStrLn xs
+    
+foo :: String -> String
+foo [] = []
+foo (' ':xs) = ',':foo xs
+foo (x:xs) = x:foo xs
+
+module Main where
+
+import Text.Printf
+
+main ::IO ()
+main = do
+    lista <- fmap (map words . lines) $ readFile "func.dat"
+    salarios <- return $ map (\(_:vl:_) -> read vl ) lista 
+    print "%.2f\n" sum salarios
+    print $ maximum salarios

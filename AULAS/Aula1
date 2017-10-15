@@ -1,0 +1,39 @@
+Prelude -> Bilbioteca básica do Haskell
+REPL -> Read, Evaluate, Print, Loop
+
+Função computacional != Função matemática -> a memória limita a execução de uma função computacional
+
+Haskell não utiliza procedimentos, apenas funções. O print será "transformado" em uma função para ser utilizado
+
+Tipagem forte -> não misturar tipos de variáveis diferentes. Isso acontece inclusive com dados vindos de um banco, tornando um varchar como IOString
+
+Composição de funções: Usadas para "ensinar" a máquina a COMO fazer.
+
+"Preguiça" -> Adicionar o 7 no final da seguinte lista: [2,3,5,80*12323514*52309485603946,5] . O Haskell não fará a multiplicação caso o objetivo seja apenas adicionar o 7 no final da lista
+
+Pureza -> Uma função deve ser chamada várias vezes com o mesmo argumento e o resultado será sempre o mesmo. Nenhum ente externo (variável global sendo alterada de estado a cada chamada) deve alterar o resultado. Por isso o Haskell não possui variáveis, apenas constantes.
+
+botão direito na pasta do c9 -> New File > Aula??.hs
+comntários:   -- ou {-   -}
+
+Módulo = programa
+
+Teste  de função :l Aula??.hs no ubuntu (salvar o arquivo .hs antes (ctrl+s))
+
+Exemplo 1:
+Padrão de uma função em haskell (Definições - Programa):
+
+(AZUL) dobro (Azul) (VERMELHO) x (VERMELHO) = (AMARELO) 2*x (AMARELO)
+Nome da função (AZUL), Parâmetro(s) (VERMELHO), Expressão (AMARELO/ LARANJA)
+
+Padrão de definição (Teste - REPL):
+*Aula1> (AZUL) dobro (AZUL) (VERMELHO) 9 (VERMELHO)
+(AMARELO) 18 (AMARELO)
+
+AMARELO nos testes = resultado
+
+Exemplo 2 (Constante):
+(AZUL) u (AZUL) = (AMARELO) 7 (AMARELO)
+não há parâmetro, apenas o nome da "função" e o resultado (valor sendo atributo)
+
+:r (reload)

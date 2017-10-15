@@ -1,0 +1,19 @@
+module Main where
+
+import Text.Printf
+import Data.Typeable
+
+tupla:: [String] -> (String,String)
+tupla [] = ("","")
+tupla x = (x!!0,x!!1)
+
+main ::IO ()
+main = do
+    lista <- fmap (map words . lines) $ readFile "func.dat"
+    print lista
+    print (show(typeOf lista))
+    let novaLista = fmap (tupla) lista
+    let comparacao = fmap (\x -> max (read.fst x) (read.snd x)) novaLista
+--    let novaLista = [max (read (x !! 1)) (read (x !! 2)) | x <- lista ]
+--    novaLista <- map (read) lista
+    print novaLista

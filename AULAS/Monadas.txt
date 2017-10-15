@@ -1,0 +1,9 @@
+Mônadas (monads)
+DEF = Uma mônada sobre uma categoria C (Hask) é a tripla  (m, return, join), onde
+-> m é um tipo de kind 2 (* -> *) instância de Functor.
+-> return é uma transformação natural de tipo: return :: a -> m a
+"troca id por m"
+-> join é uma transformação natural de tipo: join :: m(m a) -> m a 
+
+
+Uma monada na categoria C é apenas um monóide na categoria dos (endo)funtores

@@ -1,0 +1,57 @@
+HEROKU: https://www.heroku.com
+banco de dados postgre
+
+create new app
+da o nome
+login to install
+
+
+Database Credentials
+
+Get credentials for manual connections to this database.
+
+Cancel
+Please note that these credentials are not permanent.
+Heroku rotates credentials periodically and updates applications where this database is attached.
+
+Host
+ec2-54-83-58-17.compute-1.amazonaws.com
+Database
+d7tnii3u224fb7
+User
+yhkxgojzxidvol
+Port
+5432
+Password
+0e04b87ec83d3c0e44663362f3205fb56eceeb7e99a8044e1a25c91531db9b21
+URI
+postgres://yhkxgojzxidvol:0e04b87ec83d3c0e44663362f3205fb56eceeb7e99a8044e1a25c91531db9b21@ec2-54-83-58-17.compute-1.amazonaws.com:5432/d7tnii3u224fb7Heroku CLI
+heroku pg:psql postgresql-polished-79332 --app bdaula
+
+
+CODENVY: https://codenvy.io
+
+stack haskell
+
+codenvy - create project - blank nome aula
+ 
+passo 1
+sudo apt-get update
+
+passo 2
+curl -sSL https://get.haskellstack.org/ | sh
+
+passo 3
+stack new aulahask yesod-postgres
+
+passo 4
+cd aulahask
+
+passo 5
+stack setup
+
+passo 5,5
+sudo apt-get install postgresql postgresql-contrib
+
+passo 6
+stack build

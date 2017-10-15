@@ -1,0 +1,55 @@
+module Main where
+
+import System.Random(randomRIO)
+
+data Naipe = Ouros | Espadas | Copas | Paus deriving (Show, Enum, Read, Eq)
+data Valor = Dois | Tres | Quatro | Cinco | Seis | Sete | Oito | Nove | Dez | J | Q | K | A deriving (Show, Enum, Read, Eq)
+
+data Carta = Carta {valor :: Valor, naipe :: Naipe} deriving (Show, Read, Eq)
+
+main :: IO ()
+main = do
+    let acertou True = "Você acertou"
+        acertou False = "Errou..."
+    baralho <- return [Carta x y | x<-[Dois .. A], y<-[Ouros .. Paus]]
+    cartaNum <- randomRIO (1, length baralho)
+    carta <- return $ baralho !! cartaNum
+    putStrLn "Escreva a carta para adivinhar: "
+    palpite <- readLn
+    putStrLn $ "Sua carta foi " ++ show (valor carta) ++ " de " ++ show (naipe carta)
+    putStrLn $ acertou $ carta == palpite
+    
+    
+    
+    module Main where
+
+import System.Random(randomRIO)
+
+data Jokenpo = Pedra | Papel | Tesoura deriving (Show, Enum, Read, Eq)
+-- data type jokenpo
+-- derivando os typeclasses show enum read e eq
+
+jogar :: Jokenpo -> Jokenpo -> String
+jogar Pedra Papel = "Perdeu"
+jogar Papel Pedra = "Ganhou"
+jogar Tesoura Papel = "Ganhou"
+jogar Papel Tesoura = "Perdeu"
+jogar Pedra Tesoura = "Ganhou"
+jogar Tesoura Pedra = "Perdeu"
+jogar _ _ = "Empatou"
+
+
+main :: IO ()
+main = do
+    let jogadas = [Pedra, Papel,Tesoura]
+    jogadaNum <- randomRIO (0 , 2)
+    jogadaComp <- return $ jogadas !! jogadaNum
+    putStrLn "Escreva a sua Jogada: "
+    jogada <- fmap (read :: String -> Jokenpo) getLine
+    -- fmap => (f a -> f b) -> f a -> f b
+    -- fmap => (f String -> f Jokenpo) IO String
+    -- Read a => String -> a
+    putStrLn $ "A jogada do computador foi " ++  show (jogadaComp)
+    putStrLn $ (jogar (jogada) (jogadaComp))
+    
+    

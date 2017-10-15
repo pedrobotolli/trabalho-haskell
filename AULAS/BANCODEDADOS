@@ -1,0 +1,13 @@
+Host
+ec2-184-72-223-199.compute-1.amazonaws.com
+Database
+d9jsr1qe7rnbnp
+User
+upejjjversfryq
+Port
+5432
+Password
+d1c783d185ca862f98f5dac4c30ac8f6de5ce149f9cfa468df19bf6507d3d4a8
+URI
+postgres://upejjjversfryq:d1c783d185ca862f98f5dac4c30ac8f6de5ce149f9cfa468df19bf6507d3d4a8@ec2-184-72-223-199.compute-1.amazonaws.com:5432/d9jsr1qe7rnbnpHeroku CLI
+heroku pg:psql postgresql-triangular-12202 --app aula-banco01
