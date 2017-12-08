@@ -1,4 +1,4 @@
-module Main where
+module CriaArquivo where
     
 main :: IO ()
 main = do
